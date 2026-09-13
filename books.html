@@ -1,1 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Books | The Magical Escape</title>
+
+<style>
+
+/* =========================================
+   THE MAGICAL ESCAPE — BOOKS
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 10% 15%, #f3dce5 0%, transparent 27%),
+        radial-gradient(circle at 90% 20%, #e9dfed 0%, transparent 25%),
+        #f9f5ed;
+
+    color: #55474b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-home {
+    display: inline-block;
+
+    margin: 25px 25px 0;
+    padding: 9px 17px;
+
+    border: 1px solid #d8c0c7;
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.65);
+
+    color: #765968;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: .5px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.back-home:hover {
+    transform: translateX(-4px);
+
+    background: #fffaf8;
+
+    box-shadow:
+        0 8px 25px rgba(100,70,80,.1);
+}
+
+
+/* =========================================
+   LIBRARY INTRO
+========================================= */
+
+.library {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 55px 25px 100px;
+
+    text-align: center;
+}
+
+.sparkles {
+    color: #bd8a9d;
+
+    font-size: 24px;
+    letter-spacing: 13px;
+
+    animation:
+        sparkleFloat 4s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+
+    0%, 100% {
+        opacity: .45;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+}
+
+.eyebrow {
+    margin-top: 14px;
+
+    color: #a86f85;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.library h1 {
+    margin: 10px 0 8px;
+
+    color: #604952;
+
+    font-size: clamp(48px, 8vw, 76px);
+
+    font-weight: normal;
+
+    line-height: 1.05;
+}
+
+.intro {
+    max-width: 500px;
+
+    margin: 0 auto 65px;
+
+    color: #806a71;
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   LITTLE SHELF
+========================================= */
+
+.shelf {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 55px;
+
+    max-width: 780px;
+
+    margin: auto;
+
+    padding-bottom: 28px;
+}
+
+.shelf::after {
+    content: "";
+
+    position: absolute;
+
+    left: -25px;
+    right: -25px;
+    bottom: 0;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c8aeb5,
+            #e1cfd3,
+            #c8aeb5,
+            transparent
+        );
+
+    opacity: .55;
+}
+
+
+/* =========================================
+   BOOK COVERS
+========================================= */
+
+.book-card {
+    position: relative;
+
+    min-height: 390px;
+
+    padding: 42px 30px 35px;
+
+    border-radius:
+        7px
+        25px
+        25px
+        7px;
+
+    border: 1px solid rgba(123,82,96,.22);
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        10px 18px 35px rgba(73,48,57,.13),
+        inset 7px 0 0 rgba(255,255,255,.35);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s ease;
+}
+
+.book-card:hover {
+    transform:
+        translateY(-12px)
+        rotate(-1deg);
+
+    box-shadow:
+        14px 30px 50px rgba(73,48,57,.2);
+}
+
+
+/* GILDED */
+
+.gilded {
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(255,255,255,.8),
+            transparent 22%
+        ),
+        linear-gradient(
+            145deg,
+            #e9cbd5,
+            #f6e4e8 55%,
+            #d9c2d1
+        );
+}
+
+
+/* OUABH */
+
+.ouabh {
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(255,255,255,.8),
+            transparent 20%
+        ),
+        linear-gradient(
+            145deg,
+            #e8d8df,
+            #f8eee9 55%,
+            #d9cedf
+        );
+}
+
+
+/* BOOK SPINE */
+
+.book-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 17px;
+    top: 18px;
+    bottom: 18px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(104,67,80,.22),
+            transparent
+        );
+}
+
+
+/* CORNER STAR */
+
+.book-card::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 20px;
+    right: 23px;
+
+    color: rgba(150,96,116,.6);
+
+    font-size: 21px;
+
+    animation:
+        tinyStar 3s ease-in-out infinite;
+}
+
+@keyframes tinyStar {
+
+    0%, 100% {
+        opacity: .4;
+        transform: scale(1) rotate(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25) rotate(12deg);
+    }
+}
+
+.book-symbol {
+    margin: 5px 0 18px;
+
+    font-size: 48px;
+
+    animation:
+        floatingBook 4s ease-in-out infinite;
+}
+
+@keyframes floatingBook {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.book-card .eyebrow {
+    margin: 0;
+
+    color: #95677a;
+}
+
+.book-card h2 {
+    margin: 15px auto;
+
+    max-width: 400px;
+
+    color: #634752;
+
+    font-size: 31px;
+
+    font-weight: normal;
+
+    line-height: 1.15;
+}
+
+.book-quote {
+    max-width: 370px;
+
+    margin: 25px auto;
+
+    color: #765b64;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+.rating {
+    color: #a86f85;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.open {
+    display: inline-block;
+
+    margin-top: 22px;
+
+    padding: 9px 17px;
+
+    border: 1px solid rgba(130,82,101,.3);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.55);
+
+    color: #765968;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   BOOK MODAL
+========================================= */
+
+dialog {
+    width: min(920px, calc(100% - 24px));
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    overflow: visible;
+}
+
+dialog::backdrop {
+    background: rgba(55,39,45,.52);
+
+    backdrop-filter: blur(7px);
+}
+
+dialog[open] {
+    animation:
+        bookAppear .6s ease both;
+}
+
+@keyframes bookAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(.94)
+            rotateX(4deg);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1)
+            rotateX(0);
+    }
+}
+
+
+/* =========================================
+   OPEN BOOK
+========================================= */
+
+.open-book {
+    position: relative;
+
+    background: #f8f0e5;
+
+    border-radius: 14px 24px 24px 14px;
+
+    box-shadow:
+        0 35px 90px rgba(40,25,30,.35);
+
+    overflow: hidden;
+}
+
+.pages {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 570px;
+}
+
+.page {
+    position: relative;
+
+    padding: 52px 48px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(238,211,220,.4),
+            transparent 28%
+        ),
+        #fffaf3;
+}
+
+.page:first-child {
+    border-right: 1px solid #dbc8c5;
+
+    box-shadow:
+        inset -12px 0 22px rgba(75,50,55,.055);
+}
+
+.page:last-child {
+    box-shadow:
+        inset 12px 0 22px rgba(75,50,55,.035);
+}
+
+.page h2 {
+    margin-top: 5px;
+
+    color: #604952;
+
+    font-size: 39px;
+
+    font-weight: normal;
+
+    line-height: 1.15;
+}
+
+.page h3 {
+    color: #80576a;
+
+    font-size: 23px;
+
+    font-weight: normal;
+}
+
+.page p {
+    color: #65545a;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+}
+
+.page-quote {
+    margin: 28px 0;
+
+    color: #855f6e !important;
+
+    font-size: 19px !important;
+
+    font-style: italic;
+
+    line-height: 1.8 !important;
+}
+
+.page-rating {
+    color: #a86f85 !important;
+
+    font-family: Arial, sans-serif;
+
+    letter-spacing: 3px;
+}
+
+.page-number {
+    position: absolute;
+
+    bottom: 17px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #b99ca5;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   BOOK CONTROLS
+========================================= */
+
+.controls {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 17px;
+
+    background: #f1e2e5;
+
+    border-top: 1px solid #ddc7cd;
+}
+
+.controls button {
+    padding: 9px 17px;
+
+    border: 1px solid #cdaab7;
+
+    border-radius: 50px;
+
+    background: #fffaf8;
+
+    color: #765968;
+
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+
+    background: #fff;
+}
+
+#counter {
+    color: #85606e;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+}
+
+.close-book {
+    position: absolute;
+
+    z-index: 20;
+
+    top: 12px;
+    right: 14px;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #d8c0c7;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.85);
+
+    color: #765968;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 25px 20px 45px;
+
+    text-align: center;
+
+    color: #987782;
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+footer span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #b98a9b;
+
+    letter-spacing: 7px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 680px) {
+
+    .library {
+        padding-top: 45px;
+    }
+
+    .intro {
+        margin-bottom: 45px;
+    }
+
+    .shelf {
+        gap: 30px;
+    }
+
+    .book-card {
+        min-height: 350px;
+    }
+
+    .pages {
+        grid-template-columns: 1fr;
+
+        max-height: 72vh;
+
+        overflow-y: auto;
+    }
+
+    .page {
+        padding: 35px 28px;
+    }
+
+    .page:first-child {
+        border-right: none;
+
+        border-bottom: 1px solid #dbc8c5;
+    }
+
+    .page h2 {
+        font-size: 31px;
+    }
+
+    .controls {
+        gap: 10px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<a class="back-home" href="index.html">
+    ← Back to The Magical Escape
+</a>
+
+
+<main class="library">
+
+    <div class="sparkles">
+        ✦ ✧ ✦
+    </div>
+
+    <div class="eyebrow">
+        A LITTLE LIBRARY OF MAGIC
+    </div>
+
+    <h1>
+        Books
+    </h1>
+
+    <p class="intro">
+        Stories to disappear into,
+        worlds to get lost in,
+        and characters you won't forget. ✧
+    </p>
+
+
+    <div class="shelf">
+
+
+        <!-- =================================
+             GILDED BLADE
+        ================================== -->
+
+        <article
+            class="book-card gilded"
+            onclick="openBook('gilded')"
+        >
+
+            <div class="book-symbol">
+                ✦
+            </div>
+
+            <div class="eyebrow">
+                Jennifer Lynn Barnes
+            </div>
+
+            <h2>
+                The Gilded Blade
+            </h2>
+
+            <p class="book-quote">
+                “He wanted her more than
+                his whole life.”
+            </p>
+
+            <div class="rating">
+                ★★★★★ &nbsp; 5/5
+            </div>
+
+            <div class="open">
+                Open the book ✧
+            </div>
+
+        </article>
+
+
+        <!-- =================================
+             ONCE UPON A BROKEN HEART
+        ================================== -->
+
+        <article
+            class="book-card ouabh"
+            onclick="openBook('ouabh')"
+        >
+
+            <div class="book-symbol">
+                ♡
+            </div>
+
+            <div class="eyebrow">
+                Stephanie Garber
+            </div>
+
+            <h2>
+                Once Upon a Broken Heart
+            </h2>
+
+            <p class="book-quote">
+                “Dream big. Dream hard.
+                Maybe your wishes will come true.”
+            </p>
+
+            <div class="rating">
+                ★★★★★ &nbsp; 5/5
+            </div>
+
+            <div class="open">
+                Open the book ✧
+            </div>
+
+        </article>
+
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <span>✦ ✧ ˚ ✦ ˚ ✧ ✦</span>
+
+    Made with a little magic ✨
+
+</footer>
+
+
+<!-- =========================================
+     THE ACTUAL OPEN BOOK
+========================================= -->
+
+<dialog id="bookDialog">
+
+    <div class="open-book">
+
+        <button
+            class="close-book"
+            onclick="closeBook()"
+            aria-label="Close book"
+        >
+            ×
+        </button>
+
+
+        <div class="pages">
+
+            <div class="page">
+
+                <div id="leftPage"></div>
+
+                <div
+                    class="page-number"
+                    id="leftNumber"
+                ></div>
+
+            </div>
+
+
+            <div class="page">
+
+                <div id="rightPage"></div>
+
+                <div
+                    class="page-number"
+                    id="rightNumber"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="controls">
+
+            <button onclick="previousSpread()">
+                ← Previous
+            </button>
+
+            <span id="counter">
+                1 / 2
+            </span>
+
+            <button onclick="nextSpread()">
+                Next →
+            </button>
+
+        </div>
+
+    </div>
+
+</dialog>
+
+
+<script>
+
+/* =========================================
+   BOOK CONTENT
+========================================= */
+
+const books = {
+
+    gilded: [
+
+        {
+            left: `
+                <div class="eyebrow">
+                    Jennifer Lynn Barnes
+                </div>
+
+                <h2>
+                    The Gilded Blade
+                </h2>
+
+                <p class="page-rating">
+                    ★★★★★
+                </p>
+
+                <p>
+                    <b>5/5</b>
+                </p>
+
+                <p class="page-quote">
+                    “He wanted her more than
+                    his whole life.”
+                </p>
+            `,
+
+            right: `
+                <h3>
+                    💭 My Review
+                </h3>
+
+                <p>
+                    Okayyy this was such a good ending.
+                    But also… I didn't want it to end.
+                </p>
+
+                <p>
+                    And honestly, I think the best books
+                    are the ones you don't want to finish.
+                </p>
+            `
+        },
+
+
+        {
+            left: `
+                <h3>
+                    💗 Characters
+                </h3>
+
+                <p>
+                    I LOVED the multiple POVs.
+                    You get to see the same thing from
+                    completely different sides.
+                </p>
+
+                <p>
+                    Sometimes you're like,
+                    “I'm obviously right,” and then
+                    you see the other person's POV and
+                    you're like… okay maybe I'm not.
+                </p>
+            `,
+
+            right: `
+                <h3>
+                    ✨ Little Things
+                </h3>
+
+                <p>
+                    Rohan and Savannah >>>.
+                </p>
+
+                <p>
+                    Rohan spending his whole life
+                    wanting one thing and then choosing
+                    Savannah instead was actually
+                    so beautiful.
+                </p>
+
+                <p>
+                    And Jameson. Seeing how intense
+                    and reckless he was before Avery
+                    made so much sense.
+                </p>
+
+                <p>
+                    Grayson and Lyra were perfect to me too.
+                </p>
+            `
+        }
+
+    ],
+
+
+    ouabh: [
+
+        {
+            left: `
+                <div class="eyebrow">
+                    Stephanie Garber
+                </div>
+
+                <h2>
+                    Once Upon a Broken Heart
+                </h2>
+
+                <p>
+                    Trilogy
+                </p>
+
+                <p class="page-rating">
+                    ★★★★★
+                </p>
+
+                <p>
+                    <b>5/5</b>
+                </p>
+
+                <p class="page-quote">
+                    “Dream big. Dream hard.
+                    Maybe your wishes will come true.”
+                </p>
+            `,
+
+            right: `
+                <h3>
+                    💭 My Review
+                </h3>
+
+                <p>
+                    I FINALLY finished the Once Upon
+                    a Broken Heart trilogy and I am
+                    speechless.
+                </p>
+
+                <p>
+                    I loved every moment of it.
+                </p>
+
+                <p>
+                    It just brings you to this magical
+                    fairytale place where everything
+                    seems possible — magic, wonder,
+                    love, friendship, happiness…
+                </p>
+            `
+        },
+
+
+        {
+            left: `
+                <h3>
+                    💗 Characters
+                </h3>
+
+                <p>
+                    I loved Evangeline and Jacks' story.
+                </p>
+
+                <p>
+                    It wasn't too slow or too fast.
+                    It just was.
+                </p>
+
+                <p>
+                    Evangeline is such an eternal optimist.
+                </p>
+            `,
+
+            right: `
+                <h3>
+                    ✨ The Feeling
+                </h3>
+
+                <p>
+                    Jacks… he's cruel, but not because
+                    he's cruel to the world.
+                    He's cruel because of the world.
+                </p>
+
+                <p>
+                    The whole world is just SO whimsical.
+                </p>
+
+                <p>
+                    Everyone's story has infinite endings.
+                    No one truly knows what's going to happen,
+                    not even fate.
+                </p>
+            `
+        }
+
+    ]
+
+};
+
+
+/* =========================================
+   BOOK ENGINE
+========================================= */
+
+let activeBook = null;
+let spread = 0;
+
+const dialog =
+    document.getElementById("bookDialog");
+
+const leftPage =
+    document.getElementById("leftPage");
+
+const rightPage =
+    document.getElementById("rightPage");
+
+const leftNumber =
+    document.getElementById("leftNumber");
+
+const rightNumber =
+    document.getElementById("rightNumber");
+
+const counter =
+    document.getElementById("counter");
+
+
+function openBook(bookName) {
+
+    activeBook = books[bookName];
+
+    if (!activeBook) return;
+
+    spread = 0;
+
+    showSpread();
+
+    dialog.showModal();
+}
+
+
+function closeBook() {
+
+    dialog.close();
+
+}
+
+
+function showSpread() {
+
+    const current =
+        activeBook[spread];
+
+    leftPage.innerHTML =
+        current.left;
+
+    rightPage.innerHTML =
+        current.right;
+
+    leftNumber.textContent =
+        `Page ${spread * 2 + 1}`;
+
+    rightNumber.textContent =
+        `Page ${spread * 2 + 2}`;
+
+    counter.textContent =
+        `${spread + 1} / ${activeBook.length}`;
+
+}
+
+
+function nextSpread() {
+
+    if (
+        spread <
+        activeBook.length - 1
+    ) {
+
+        spread++;
+
+        showSpread();
+
+    }
+
+}
+
+
+function previousSpread() {
+
+    if (spread > 0) {
+
+        spread--;
+
+        showSpread();
+
+    }
+
+}
+
+
+/* =========================================
+   CLOSE WHEN CLICKING OUTSIDE
+========================================= */
+
+dialog.addEventListener(
+    "click",
+    function(event) {
+
+        const rect =
+            dialog.getBoundingClientRect();
+
+        const inside =
+            event.clientX >= rect.left &&
+            event.clientX <= rect.right &&
+            event.clientY >= rect.top &&
+            event.clientY <= rect.bottom;
+
+        if (!inside) {
+            closeBook();
+        }
+
+    }
+);
+
+
+/* =========================================
+   KEYBOARD
+========================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (!dialog.open) return;
+
+        if (event.key === "ArrowRight") {
+            nextSpread();
+        }
+
+        if (event.key === "ArrowLeft") {
+            previousSpread();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
